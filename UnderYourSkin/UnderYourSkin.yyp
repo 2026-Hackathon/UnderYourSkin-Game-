@@ -23,8 +23,8 @@
   "name":"UnderYourSkin",
   "resources":[
     {"id":{"name":"Note1","path":"notes/Note1/Note1.yy",},},
-    {"id":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},},
-    {"id":{"name":"poPlatform","path":"objects/poPlatform/poPlatform.yy",},},
+    {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
+    {"id":{"name":"oPlatform","path":"objects/oPlatform/oPlatform.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"sCollisionMAsk","path":"sprites/sCollisionMAsk/sCollisionMAsk.yy",},},
     {"id":{"name":"sPlayer","path":"sprites/sPlayer/sPlayer.yy",},},
