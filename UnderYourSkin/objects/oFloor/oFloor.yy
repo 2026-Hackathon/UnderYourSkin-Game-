@@ -1,9 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"oTempPlatform",
+  "%Name":"oFloor",
   "eventList":[],
   "managed":true,
-  "name":"oTempPlatform",
+  "name":"oFloor",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
