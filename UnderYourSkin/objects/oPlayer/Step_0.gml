@@ -15,6 +15,18 @@ if air_drags > 0
 
 if (mouse_check_button_released(mb_left))
 {
+
+	if (bouncecount > 1)
+	{
+		audio_play_sound(slopsnd,1,0)
+	}
+	else {
+		audio_play_sound(wooshsnd,1,0)
+	}
+	
+	
+		bouncecount = 0
+		
     if (dragging)
     {
         dragging = false;
@@ -52,13 +64,22 @@ var vsp = vy;
 var move_x = x + hsp;
 var move_y = y + vsp;
 
+if place_meeting(x, y + 1, tilemap)
+{ if bouncecount <= 5
+	audio_play_sound(slapsnd,1,0)
+	bouncecount = bouncecount + 1
+	}
+
+
 if (!place_meeting(move_x, move_y, tilemap))
 {
     x = move_x;
     y = move_y;
+	
 }
 else
 {
+	
     var surface_angle = 0;
     if (place_meeting(move_x, y, tilemap)) surface_angle = 0;
     else if (place_meeting(x, move_y, tilemap)) surface_angle = 90;

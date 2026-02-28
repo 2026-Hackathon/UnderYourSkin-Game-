@@ -2,6 +2,7 @@
 vx = 0;
 vy = 0;
 maxV = 10;
+bouncecount = 0
 
 // Fling settings
 friction    = 0.90;
