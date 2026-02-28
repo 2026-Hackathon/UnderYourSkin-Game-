@@ -1,6 +1,6 @@
 {
   "$GMProject":"v1",
-  "%Name":"UnderYourSkin",
+  "%Name":"Blank Pixel Game",
   "AudioGroups":[
     {"$GMAudioGroup":"v1","%Name":"audiogroup_default","exportDir":"","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
   ],
@@ -17,7 +17,7 @@
   "MetaData":{
     "IDEVersion":"2024.14.3.217",
   },
-  "name":"UnderYourSkin",
+  "name":"Blank Pixel Game",
   "resources":[
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"sPlayer","path":"sprites/sPlayer/sPlayer.yy",},},

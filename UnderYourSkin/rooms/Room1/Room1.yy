@@ -13,8 +13,8 @@
   ],
   "name":"Room1",
   "parent":{
-    "name":"Blank Pixel Game",
-    "path":"Blank Pixel Game.yyp",
+    "name":"UnderYourSkin",
+    "path":"UnderYourSkin.yyp",
   },
   "parentRoom":null,
   "physicsSettings":{
