@@ -23,8 +23,11 @@
   "name":"UnderYourSkin",
   "resources":[
     {"id":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},},
+    {"id":{"name":"oTempPlatform","path":"objects/oTempPlatform/oTempPlatform.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"sPlayer","path":"sprites/sPlayer/sPlayer.yy",},},
+    {"id":{"name":"sTempFloor","path":"sprites/sTempFloor/sTempFloor.yy",},},
+    {"id":{"name":"tsFloor","path":"tilesets/tsFloor/tsFloor.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
