@@ -18,6 +18,8 @@ if place_meeting(x,y-1,poPlatform){
 	}
 
 }
+if Not place_meeting(x,y-1,poPlatform){
 /*Remove velocity by gravity and airresistance*/
 yVelocity -= grav
 xVelocity = xVelocity * airResistance
+}
