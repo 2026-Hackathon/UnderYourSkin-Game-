@@ -1,24 +1,27 @@
-/// oPlayer STEP EVENT - FULL (ANGLE-BASED BOUNCE + SLOPES)
+/// STEP EVENT - DRAG ANYWHERE + SCREEN LINE
 
-
-// 1) DRAG INPUT ----------------------------------------
-if (mouse_check_button_pressed(mb_left))
+// 1) SIMPLE AIR DRAG SYSTEM ---------------------------
+if (place_meeting(x, y + 1, tilemap))
 {
-    if (position_meeting(mouse_x, mouse_y, id))
-    {
-        dragging     = true;
-        drag_start_x = mouse_x;
-        drag_start_y = mouse_y;
-    }
+    air_drags = 2;  // REFILL when touching ground
 }
+if air_drags > 0
+{if (mouse_check_button_pressed(mb_left))
+{
+    dragging = true;
+    drag_start_x = mouse_x;
+    drag_start_y = mouse_y;
+}}
 
 if (mouse_check_button_released(mb_left))
 {
     if (dragging)
     {
         dragging = false;
-        var dx   = drag_start_x - mouse_x;
-        var dy   = drag_start_y - mouse_y;
+        air_drags = max(0, air_drags - 1);  // ALWAYS DECREASE
+        
+        var dx = drag_start_x - mouse_x;
+        var dy = drag_start_y - mouse_y;
         var dist = point_distance(0, 0, dx, dy);
         dist = clamp(dist, 0, max_power * (1 / power_scale));
 
@@ -45,11 +48,10 @@ if (abs(vy) > maxV) vy = sign(vy) * maxV;
 var hsp = vx;
 var vsp = vy;
 
-// 4) COLLISION + ANGLE-BASED BOUNCE --------------------
+// 4) COLLISION + ANGLE BOUNCE --------------------------
 var move_x = x + hsp;
 var move_y = y + vsp;
 
-// Try diagonal movement first
 if (!place_meeting(move_x, move_y, tilemap))
 {
     x = move_x;
@@ -57,59 +59,25 @@ if (!place_meeting(move_x, move_y, tilemap))
 }
 else
 {
-    // Detect surface normal angle by testing collision directions
     var surface_angle = 0;
+    if (place_meeting(move_x, y, tilemap)) surface_angle = 0;
+    else if (place_meeting(x, move_y, tilemap)) surface_angle = 90;
+    else surface_angle = 45 * sign(hsp);
     
-    // Check horizontal collision first
-    if (place_meeting(move_x, y, tilemap))
-    {
-        surface_angle = 0; // Horizontal surface (floor/wall)
-    }
-    // Check vertical collision
-    else if (place_meeting(x, move_y, tilemap))
-    {
-        surface_angle = 90; // Vertical surface
-    }
-    // Diagonal surface approximation
-    else
-    {
-        surface_angle = 45 * sign(hsp); // 45° or -45° slope
-    }
-    
-    // Vector reflection based on surface normal
     var normal_x = cos(degtorad(surface_angle));
     var normal_y = sin(degtorad(surface_angle));
     var dot = vx * normal_x + vy * normal_y;
     vx = (vx - 2 * dot * normal_x) * bounce;
     vy = (vy - 2 * dot * normal_y) * bounce;
     
-    // Move as close as possible to surface
-    if (!place_meeting(move_x, y, tilemap))
-    {
-        x = move_x;
-    }
-    else
-    {
-        while (!place_meeting(x + sign(hsp), y, tilemap))
-        {
-            x += sign(hsp);
-        }
-    }
+    if (!place_meeting(move_x, y, tilemap)) x = move_x;
+    else while (!place_meeting(x + sign(hsp), y, tilemap)) x += sign(hsp);
     
-    if (!place_meeting(x, move_y, tilemap))
-    {
-        y = move_y;
-    }
-    else
-    {
-        while (!place_meeting(x, y + sign(vsp), tilemap))
-        {
-            y += sign(vsp);
-        }
-    }
+    if (!place_meeting(x, move_y, tilemap)) y = move_y;
+    else while (!place_meeting(x, y + sign(vsp), tilemap)) y += sign(vsp);
 }
 
-// 5) SLOPE CLIMB (only during fast horizontal movement) 
+// 5) SLOPE + VIEWPORT ----------------------------------
 if (abs(hsp) > 0.5 && place_meeting(x, y + 1, tilemap))
 {
     if (!place_meeting(x + sign(hsp), y - 1, tilemap) && 
@@ -120,14 +88,9 @@ if (abs(hsp) > 0.5 && place_meeting(x, y + 1, tilemap))
     }
 }
 
-// Viewport Collision
-if (x+0.5 > 21*16){
-	vx=0;
-	x = 21*16;	
-} 
-if (x-0.5 < 0){
-vx = 0;
+if (x+0.5 > 21*16){ vx=0; x = 21*16; }
+if (x-0.5 < 0){ vx = 0; x = 0.5; }
+
+if (y > 720){
+room_restart()
 }
-if (y>160){
-	room_restart()
-	}

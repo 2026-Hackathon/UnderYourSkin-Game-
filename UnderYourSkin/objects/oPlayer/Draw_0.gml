@@ -1,5 +1,5 @@
 draw_self();
-
+// **EXACT drag line: start pos → current mouse pos**
 if (dragging)
 {
     draw_set_color(c_red);
