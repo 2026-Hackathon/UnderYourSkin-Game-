@@ -1,6 +1,7 @@
 if (dragging)
 {
     dragging = false;
+	sc = 7.5
     
     // Calculate drag distance
     var dx = drag_start_x - mouse_x;
@@ -14,4 +15,10 @@ if (dragging)
     // Apply velocity
     vx = dx * power_scale;
     vy = dy * power_scale;
+	
+	if (vx > sc){vx = sc}
+	if (vx <-sc){vx = -sc}
+	if (vy > sc){vy = sc}
+	if (vy < -sc){vy = -sc}
+	
 }
