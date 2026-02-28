@@ -1,6 +1,6 @@
 
 /*check if touching ground*/
-if place_meeting(x,y-1,poPlatform) and y = 0{
+if place_meeting(x,y-1,poPlatform) and yVelocity = 0{
 /*get vector from mouse*/
 /*get x vector*/
 xDifference = x - display_mouse_get_x();
