@@ -1,26 +1,33 @@
-//collsions
-/*if collides above then boune back with less velocity*/
-if place_meeting(x,y+1,poPlatform){
-	yVelocity = -yVelocity * ceilingBounceConstant;
-}
-/*if collides with wall then boune back with less velocity*/
-if place_meeting(x+1,y,poPlatform) or place_meeting(x-1,y,poPlatform){
-	xVelocity = -xVelocity * wallBounceConstant;
-}
-/*if collides with floor, reduce y velocity by frictinal coefficient and flip, if below frictionstop then stop*/
-if place_meeting(x,y-1,poPlatform){
-	yVelocity = -yVelocity * frictionCoefficient;
-	if yVelocity<frictionStop {
-		yVelocity = 0;
-	}
-	if xVelocity < frictionStop{
-		xVelocity = 0;
-	}
 
-}
-/*Remove velocity by gravity and airresistance*/
-yVelocity += grav
-xVelocity = xVelocity * airResistance
 
-x += xVelocity
-y += yVelocity
+    // Get input 
+	kLeft = -keyboard_check(vk_left); kRight = keyboard_check(vk_right); 
+	kJump = keyboard_check_pressed(vk_up);
+
+    // Use input ç
+	move = kLeft + kRight; 
+	xSpd = xSpd + (move * moveSpeed)*tFriction ; 
+	if (vsp < 10) { vsp += grav; };
+
+    if (place_meeting(x, y + 1, poPlatform)) { ySpd = kJump * -jumpSpeed }
+
+    // H Collisions 
+	if (place_meeting(x + hsp, y, poPlatform))
+	{ 
+		while (!place_meeting(x + sign(hsp), y, poPlatform)) 
+		{ 
+			x += sign(hsp); } 
+		hsp = 0; 
+		} 
+	x += hsp;
+
+    // v Collisions 
+	if (place_meeting(x, y + ySpd, poPlatform)) 
+	{ 
+		while (!place_meeting(x, y + sign(ySpd), poPlatform)) 
+		{ y += sign(vsp);
+			xSpd = xSpd * tFriction
+			} 
+	ySpd = 0; 
+	} 
+	y += ySpd;

@@ -1,0 +1,1 @@
+canjump = true
