@@ -16,8 +16,8 @@ if (dragging)
     vx = dx * power_scale;
     vy = dy * power_scale;
 	
-	if (vx > sc){vx = sc}
-	if (vx <-sc){vx = -sc}
+	if (vx > 2*sc){vx = 2*sc}
+	if (vx <-2*sc){vx = -2*sc}
 	if (vy > sc){vy = sc}
 	if (vy < -sc){vy = -sc}
 	
