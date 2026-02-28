@@ -1,6 +1,6 @@
 {
   "$GMTileSet":"v1",
-  "%Name":"TileSet1",
+  "%Name":"tsMeat",
   "autoTileSets":[],
   "macroPageTiles":{
     "SerialiseHeight":13,
@@ -8,13 +8,13 @@
     "TileCompressedData":[-118,0,3,268435460,3,4,-8,0,3,15,18,19,-8,0,3,20,23,24,],
     "TileDataFormat":1,
   },
-  "name":"TileSet1",
+  "name":"tsMeat",
   "out_columns":12,
   "out_tilehborder":2,
   "out_tilevborder":2,
   "parent":{
-    "name":"UnderYourSkin",
-    "path":"UnderYourSkin.yyp",
+    "name":"Sprites",
+    "path":"folders/Sprites.yy",
   },
   "resourceType":"GMTileSet",
   "resourceVersion":"2.0",

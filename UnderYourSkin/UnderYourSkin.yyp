@@ -31,7 +31,7 @@
     {"id":{"name":"sPlayer","path":"sprites/sPlayer/sPlayer.yy",},},
     {"id":{"name":"Sprite4","path":"sprites/Sprite4/Sprite4.yy",},},
     {"id":{"name":"sTempFloor","path":"sprites/sTempFloor/sTempFloor.yy",},},
-    {"id":{"name":"TileSet1","path":"tilesets/TileSet1/TileSet1.yy",},},
+    {"id":{"name":"tsMeat","path":"tilesets/tsMeat/tsMeat.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
