@@ -90,3 +90,7 @@ if (abs(hsp) > 0.5 && place_meeting(x, y + 1, tilemap))
 
 if (x+0.5 > 21*16){ vx=0; x = 21*16; }
 if (x-0.5 < 0){ vx = 0; x = 0.5; }
+
+if (y > 720){
+room_restart()
+}
