@@ -54,6 +54,11 @@ var hsp = vx;
 var vsp = vy;
 var bounce = 0.8; // 0–1
 
+if (abs(vx) > maxV)
+ {vx = sign(vx) * maxV};
+ if (abs(vy) > maxV)
+ {vy = sign(vx) * maxV};
+
 // Try full diagonal step first (tilemap instead of oPlatform)
 if (!place_meeting(x + hsp, y + vsp, tilemap))
 {
@@ -92,3 +97,6 @@ else
         vy  = vsp;
     }
 }
+
+
+

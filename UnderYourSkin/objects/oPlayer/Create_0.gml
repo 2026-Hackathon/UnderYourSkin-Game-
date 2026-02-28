@@ -2,6 +2,8 @@
 vx = 0;
 vy = 0;
 
+maxV = 10
+
 // Fling settings
 friction    = 0.90;   // Horizontal slowdown
 power_scale = 0.2;
@@ -9,7 +11,7 @@ max_power   = 25;
 
 // Gravity
 grav     = 0.5;
-max_fall = 20;
+max_fall = 10;
 
 // Bounce
 bounce = 0.8; // 0 = no bounce, 1 = perfect bounce
