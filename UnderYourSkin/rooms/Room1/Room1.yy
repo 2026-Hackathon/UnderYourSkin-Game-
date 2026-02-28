@@ -14,9 +14,11 @@
   "isDnd":false,
   "layers":[
     {"$GMRTileLayer":"","%Name":"FloorTiles","depth":0,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"FloorTiles","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":12,"SerialiseWidth":23,"TileCompressedData":[
-          -62,-2147483648,2,13,17,-21,-2147483648,2,61,65,-6,-2147483648,4,13,15,15,17,-19,-2147483648,4,61,63,
-          63,65,-66,-2147483648,1,268435460,-13,2,4,88,89,17,0,-4,-2147483648,2,13,15,-13,14,5,100,19,19,14,17,
-          -3,-2147483648,1,37,-18,19,1,41,-3,-2147483648,1,37,-18,19,3,41,-2147483648,-2147483648,
+          -41,-2147483648,1,39,-20,-2147483648,3,39,68,39,-18,-2147483648,5,43,-2147483648,39,61,81,-5,-2147483648,
+          4,13,15,15,17,-3,-2147483648,4,13,15,15,17,-12,-2147483648,4,61,63,63,65,-3,-2147483648,4,61,63,63,65,
+          -8,-2147483648,1,43,-42,-2147483648,2,88,17,-6,-2147483648,1,268435460,-13,2,4,88,100,41,0,-4,-2147483648,
+          2,13,15,-13,14,5,100,19,19,14,17,-3,-2147483648,1,37,-18,19,1,41,-3,-2147483648,1,37,-18,19,3,41,-2147483648,
+          -2147483648,
         ],"TileDataFormat":1,},"tilesetId":{"name":"TileSet1","path":"tilesets/TileSet1/TileSet1.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
     {"$GMRInstanceLayer":"","%Name":"Instances","depth":100,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v4","%Name":"inst_317EC1B6","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_317EC1B6","objectId":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":48.0,"y":16.0,},
