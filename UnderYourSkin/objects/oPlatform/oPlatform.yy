@@ -26,11 +26,11 @@
   "properties":[],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
-  "solid":true,
-  "spriteId":null,
-  "spriteMaskId":{
-    "name":"sPlayer",
-    "path":"sprites/sPlayer/sPlayer.yy",
+  "solid":false,
+  "spriteId":{
+    "name":"sCollisionMAsk",
+    "path":"sprites/sCollisionMAsk/sCollisionMAsk.yy",
   },
-  "visible":true,
+  "spriteMaskId":null,
+  "visible":false,
 }
